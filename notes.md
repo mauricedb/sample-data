@@ -1,6 +1,6 @@
 [https://www.json-generator.com/](https://www.json-generator.com/)
 
-```
+````
 [
   '{{repeat(10)}}',
   {
@@ -16,11 +16,11 @@
       '{{repeat(1, 10)}}',
       {
         amount: '{{floating(10, 100, 2, "$0,0.00")}}',
-        date: '{{date(new Date(1970, 0, 1), new Date(), "YYYY-MM-ddThh:mm:ss Z")}}',
+        date: '{{date(new Date(1970, 0, 1), new Date(), "YYYY-MM-ddThh:mm:ss")}}Z',
         type: '{{random("invoice", "payment","deposit","withdrawal")}}',
         name: '{{company()}}'
       }
     ]
   }
-]
-```
+]```
+````

@@ -1194,6 +1194,7 @@
       "picture": "https://randomuser.me/api/portraits/lego/0.jpg",
       "address": "676 Bulwer Place, Reinerton, Oklahoma, 3597",
       "phone": "(811) 563-3672",
+      "favorite_movie": 278,
       "transactions": [
         {
           "amount": "$57.42",
@@ -1230,6 +1231,7 @@
       "picture": "https://randomuser.me/api/portraits/lego/1.jpg",
       "address": "674 Moultrie Street, Hobucken, Maryland, 4181",
       "phone": "(865) 535-2756",
+      "favorite_movie": 238,
       "transactions": [
         {
           "amount": "$37.35",
@@ -1272,6 +1274,7 @@
       "picture": "https://randomuser.me/api/portraits/lego/2.jpg",
       "address": "748 Emerald Street, Tilden, Michigan, 372",
       "phone": "(818) 586-2385",
+      "favorite_movie": 497,
       "transactions": [
         {
           "amount": "$62.70",
@@ -1314,6 +1317,7 @@
       "picture": "https://randomuser.me/api/portraits/lego/3.jpg",
       "address": "411 Evans Street, Fairhaven, Nebraska, 9626",
       "phone": "(848) 494-3241",
+      "favorite_movie": 680,
       "transactions": [
         {
           "amount": "$71.97",
@@ -1350,6 +1354,7 @@
       "picture": "https://randomuser.me/api/portraits/lego/4.jpg",
       "address": "879 Sapphire Street, Wells, Texas, 8427",
       "phone": "(899) 456-3001",
+      "favorite_movie": 238,
       "transactions": [
         {
           "amount": "$59.31",
@@ -1380,6 +1385,7 @@
       "picture": "https://randomuser.me/api/portraits/lego/5.jpg",
       "address": "276 Tabor Court, Bascom, Puerto Rico, 8759",
       "phone": "(844) 445-2874",
+      "favorite_movie": 278,
       "transactions": [
         {
           "amount": "$85.56",
@@ -1416,6 +1422,7 @@
       "picture": "https://randomuser.me/api/portraits/lego/6.jpg",
       "address": "858 Miller Place, Mulino, Alabama, 6632",
       "phone": "(941) 502-3307",
+      "favorite_movie": 680,
       "transactions": [
         {
           "amount": "$54.26",
@@ -1458,6 +1465,7 @@
       "picture": "https://randomuser.me/api/portraits/lego/7.jpg",
       "address": "425 Summit Street, Bethpage, New Mexico, 8755",
       "phone": "(992) 402-3846",
+      "favorite_movie": 278,
       "transactions": [
         {
           "amount": "$24.41",
@@ -1500,6 +1508,7 @@
       "picture": "https://randomuser.me/api/portraits/lego/8.jpg",
       "address": "462 Gem Street, Draper, Hawaii, 3935",
       "phone": "(879) 595-2715",
+      "favorite_movie": 497,
       "transactions": [
         {
           "amount": "$92.35",
@@ -1517,7 +1526,8 @@
       "balance": "$3,548.67",
       "picture": "https://randomuser.me/api/portraits/lego/9.jpg",
       "address": "108 Bouck Court, Northridge, Wisconsin, 8569",
-      "phone": "(981) 451-3864"
+      "phone": "(981) 451-3864",
+      "favorite_movie": 122
     }
   ]
 }

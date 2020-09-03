@@ -6,6 +6,20 @@ const server = jsonServer.create();
 const middlewares = jsonServer.defaults();
 server.use(middlewares);
 
+server.use((req, res, next) => {
+  let sleep = null;
+
+  if (req.query && req.query.sleep) {
+    sleep = +req.query.sleep;
+  }
+
+  if (typeof sleep === "number") {
+    setTimeout(next, sleep);
+  } else {
+    next();
+  }
+});
+
 const router = jsonServer.router(data);
 server.use(router);
 

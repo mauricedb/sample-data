@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/mauricedb/sample-data#readme",
   "dependencies": {
-    "json-server": "^0.16.3",
-    "nodemon": "^2.0.12"
+    "json-server": "^0.17.4",
+    "nodemon": "^3.1.7"
   }
 }

@@ -24,5 +24,5 @@ const router = jsonServer.router(data);
 server.use(router);
 
 server.listen(port, () => {
-  console.log(`JSON Server is running on port ${port}`);
+  console.log(`JSON Server is now running on port ${port}`);
 });

@@ -12,6 +12,7 @@ fetchData();
 async function fetchData() {
   await fetchTopRatedMovies();
   await fetchPopularMovies();
+  await fetchHorrorMovies();
   // await fetchGenres();
 }
 
@@ -113,7 +114,7 @@ async function fetchPopularMovies() {
   const actors = new Map<number, Person>();
   const directors = new Map<number, Person>();
 
-  const popularMoviesUrl = `${themoviedbOrigin}/3/movie/popular?api_key=${apiKey}&language=en-US&page=1`;
+  const popularMoviesUrl = `${themoviedbOrigin}/3/movie/popular?api_key=${apiKey}&language=en-US`;
 
   for (let page = 1; page <= 2; page++) {
     const url = `${popularMoviesUrl}&page=${page}`;
@@ -193,6 +194,60 @@ async function fetchPopularMovies() {
       actors: movieActors.map((actor: { id: number }) => actor.id),
       directors: movieDirectors.map((director: { id: number }) => director.id),
     };
+  }
+}
+
+async function fetchHorrorMovies() {
+  const movies = new Map<number, Movie>();
+  const actors = new Map<number, Person>();
+  const directors = new Map<number, Person>();
+
+  const horrorMoviesUrl = `${themoviedbOrigin}/3/discover/movie?api_key=${apiKey}&language=en-US&with_genres=27&sort_by=vote_average.desc&vote_count.gte=1000&`;
+
+  for (let page = 1; page <= 2; page++) {
+    const url = `${horrorMoviesUrl}&page=${page}`;
+
+    const rsp = await fetch(url);
+    if (!rsp.ok) {
+      throw new Error(
+        `Failed to fetch horror movies: ${rsp.status} ${rsp.statusText}`
+      );
+    }
+
+    const data = await rsp.json();
+    for (const movie of data.results) {
+      await addMovieWithActorsAndDirectors(movie);
+    }
+  }
+
+  // for (let page = 1; page <= 25; page += 20) {
+  //   const url = `${discoverMovie}&with_genres=878&page=${page}`;
+
+  //   const rsp = await fetch(url);
+  //   if (!rsp.ok) {
+  //     throw new Error(
+  //       `Failed to fetch science fiction movies: ${rsp.status} ${rsp.statusText}`
+  //     );
+  //   }
+
+  // const data = await rsp.json();
+  // for (const movie of data.results) {
+  //   await addMovieWithActorsAndDirectors(movie);
+  // }
+  // }
+
+  db['horror-movies'] = Array.from(movies.values());
+  await saveData('../../db.json', db);
+
+  // await saveData('movies.json', Array.from(movies.values()));
+  // await saveData('actors.json', Array.from(actors.values()));
+  // await saveData('directors.json', Array.from(directors.values()));
+
+  async function addMovieWithActorsAndDirectors(movie: Movie) {
+    // const result = await fetchActorsAndDirectors(movie.id);
+    // movie.actorIds = result.actors;
+    // movie.directorIds = result.directors;
+    movies.set(movie.id, movie);
   }
 }
 

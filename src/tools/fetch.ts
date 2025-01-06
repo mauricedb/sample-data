@@ -236,7 +236,9 @@ async function fetchHorrorMovies() {
   // }
   // }
 
-  db['horror-movies'] = Array.from(movies.values());
+  db['horror-movies'] = Array.from(movies.values()).sort((a, b) =>
+    a.title.localeCompare(b.title)
+  );
   await saveData('../../db.json', db);
 
   // await saveData('movies.json', Array.from(movies.values()));
